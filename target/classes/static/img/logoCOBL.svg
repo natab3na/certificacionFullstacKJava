@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 595.3 841.9" style="enable-background:new 0 0 595.3 841.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:url(#SVGID_2_);}
+	.st3{font-family:'Bebas-Regular';}
+	.st4{font-size:34.8727px;}
+	.st5{letter-spacing:-1.4;}
+</style>
+<g>
+	<path class="st0" d="M192,412.8h12.9c-0.7-6.6-6.2-11.7-12.9-11.7c-7.2,0-13,5.8-13,13c0,7.2,5.8,13,13,13V412.8z"/>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="170.1688" y1="414.1465" x2="193.4457" y2="414.1465">
+			<stop  offset="7.905541e-02" style="stop-color:#FDC800"/>
+			<stop  offset="0.9738" style="stop-color:#F18F34"/>
+		</linearGradient>
+		<path class="st1" d="M192,436c-12,0-21.8-9.8-21.8-21.8c0-12,9.8-21.8,21.8-21.8c0.4,0,0.9,0,1.5,0.1l-0.3,3.8c-0.5,0-0.9,0-1.2,0
+			c-9.9,0-18,8.1-18,18c0,9.9,8.1,18,18,18c0.4,0,0.7,0,1.2,0l0.3,3.8C192.9,435.9,192.4,436,192,436z"/>
+	</g>
+	<g>
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="162.369" y1="428.1194" x2="191.9468" y2="428.1194">
+			<stop  offset="8.455310e-02" style="stop-color:#FDC800"/>
+			<stop  offset="0.9516" style="stop-color:#F18F34"/>
+		</linearGradient>
+		<path class="st2" d="M191.9,443.8c-16.3,0-29.6-13.3-29.6-29.6c0-0.5,0-1.1,0-1.7l3.8,0.2c0,0.5,0,1,0,1.5
+			c0,14.2,11.6,25.8,25.8,25.8L191.9,443.8z"/>
+	</g>
+</g>
+<text transform="matrix(1.3841 0 0 1 195.0888 443.9839)" class="st0 st3 st4 st5">cursos online</text>
+</svg>

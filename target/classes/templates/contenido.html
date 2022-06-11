@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Sistema Certificación</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+	
+</head>
+<header class= "mb-5">
+	<nav class=" navbar-expand-lg navbar navbar-dark bg-primary static-top">
+		<div class="container">
+			<a  class="navbar-brand" href="/">   
+			  Cursos Online</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+	
+<body class= "text-center">
+<div class="container ">
+	<div class= "row justify-content-evenly">
+	<div class= "col-6">
+    <div class="card shadow mb-4">
+       <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">AGREGAR CONTENIDO</h6>
+         </div>
+    <div class="card-body">
+   <form action="#" th:action="@{/admin/guardarContenido}" th:object="${contenido}" method="post">
+				<fieldset>
+					<legend>Información del Contenido</legend>
+					<input id="idcurso" th:field="*{idCurso}" type="hidden">
+					<div >
+						<div class="col-12">
+							<div class="form-group">
+								<label for="nombre">Nombre *</label>
+								<input id="nombre" name="nombre" th:field="*{nombre}" type="text"
+									class="form-control required">
+							</div>
+							<div class="form-group">
+								<label for="detalle">Detalle *</label>
+								<input id="detalle" name="detalle" th:field="*{detalle}" type="text"
+									class="form-control required">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<button class="btn btn-lm btn-primary btn-primary" type="submit">Guardar</button>
+
+			</form>
+			<span style="color:red" th:text="${mensaje}"></span>
+			<br>
+			<form id="hotDealForm" th:action="@{/admin}" method="get">
+				<button class="btn btn-lm btn-primary btn-primary" type="submit">Volver</button>
+			</form>
+
+  	</div>
+  </div>
+</div>
+
+<div class= "col-6">
+ <div class="card shadow mb-4">
+       <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Contenidos Asignados</h6>
+         </div>
+    <div class="card-body">
+   
+   <fieldset>
+				
+				<table id="allEstud" class="table table-striped">
+					<thead>
+						<tr>
+							<th width="20%">Nombre</th>
+							<th>Descripcion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="result" data-th-each="cont : ${contenidos}">
+							<td>[[${cont.nombre}]]</td>
+							<td>[[${cont.detalle}]]</td>
+							<td><a th:href="@{/admin/elimina/{id}(id=${cont.id})}">Eliminar </a>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset>
+			<span style="color:red" th:text="${mensaje}"></span>
+   
+   
+   
+   
+   
+  	</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+ </div>
+</div>
+</body>
+</html>

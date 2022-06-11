@@ -1,0 +1,97 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Sistema Certificación</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+
+</head>
+<header class= "mb-5"> 
+	<nav class=" navbar-expand-lg navbar navbar-dark bg-primary static-top">
+		<div class="container">
+			<a  class="navbar-brand" href="/">   
+			  Cursos Online</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+</header>
+<body>
+
+	<main>
+		<div class="container-fluid">
+
+			<!-- Page Heading -->
+			<h1 class="h3 mb-2 text-primary">Bienvenido Administrador</h1>
+
+
+			<!-- DataTales Example -->
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Listado de cursos</h6>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive-admin">
+						<table class="table table-bordered-admin" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Fecha Inicio</th>
+									<th>Fecha Termino</th>
+									<th>Descripcion</th>
+									<th>Ver</th>
+									<th>Editar</th>
+									<th>Eliminar</th>
+									<th>Agregar Contenido</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<trclass="result" data-th-each="cur : ${cursos}">
+									<td>[[${cur.nombre}]]</td>
+									<td>[[${cur.fecinicio}]]</td>
+									<td>[[${cur.fectermino}]]</td>
+									<td>[[${cur.descripcion}]]</td>
+									<td><a th:href="@{/obtiene/{id}(id=${cur.id})}">Ver </a></td>
+									<td> <a th:href="@{/admin/editarCurso/{id}(id=${cur.id})}"> Editar</a></td>
+									<td><a th:href="@{/admin/eliminarCurso/{id}(id=${cur.id})}"> Eliminar</a> </td>
+									<td><a th:href="@{/admin/agregarContenido/{id}(id=${cur.id})}"> AddContenido</a>
+									</td>
+									</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<a th:href="@{/admin/crearCurso/}" class="btn btn-primary btn-icon-split">
+				<span class="icon text-white-50">
+					<i class="fas fa-flag"></i>
+				</span>
+				<span class="text">Crear Curso</span></a>
+		</div>
+
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Sistema Certificación</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+
+</head>
+<header class="mb-5">
+	<nav class=" navbar-expand-lg navbar navbar-dark bg-primary static-top">
+		<div class="container">
+			<a class="navbar-brand" href="/">
+				Cursos Online</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<body class="text-center">
+	<div class="container ">
+		
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">CREAR/EDITAR CURSO</h6>
+				</div>
+				<div class="card-body">
+					<div class="col">
+        <form action="#" th:action="@{/admin/guardarCurso}" th:object="${curso}" method="post">
+			 <fieldset>
+                    <legend>Información del curso</legend>
+                    
+					<input id="idcurso" th:field="*{id}" type="hidden">
+                   
+                    <div class="row ">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="nombre">Nombre *</label>
+                                <input id="nombre" name="nombre" th:field="*{nombre}" type="text"
+                                       class="form-control required">
+                     		</div>
+                     		<div class="form-group">
+                                <label for="imge">Imagen *</label>
+                                <input id="imge" name="imge" th:field="*{imagen}" type="text"
+                                       class="form-control required">
+                     		</div>
+                     		<div class="form-group">
+                                <label for="desc">Descripcion *</label>
+                                <textarea id="desc" name="desc" th:field="*{descripcion}" type="text"
+                                       class="form-control required"></textarea>
+                     		</div>
+                        </div>
+                        <div class="col-6">
+                            
+                     		<div class="form-group">
+                                <label for="fecIni">Fecha Inicio *</label>
+                                <input id="fecIni" name="fecIni" th:field="*{fecinicio}" type="date"
+                                       class="form-control required">
+                     		</div>
+                     		<div class="form-group">
+                                <label for="fecTerm">Fecha Termino *</label>
+                                <input id="fecTerm" name="fecTerm" th:field="*{fectermino}" type="date"
+                                       class="form-control required">
+                     		</div>
+                     		<div class="form-group">
+                                <label for="cupos">Cupos *</label>
+                                <input id="cupos" name="cupos" th:field="*{cupos}" type="number"
+                                       class="form-control required">
+                     		</div>
+                        </div>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button> 
+                    </div>
+                  
+			 </fieldset>  
+			 
+		</form>
+		<span style="color:red" th:text="${mensaje}"></span>
+   	</div>
+ 
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+	</div>
+</body>
+
+</html>
